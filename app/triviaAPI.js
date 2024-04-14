@@ -4,7 +4,7 @@ export const Category = {
     EntertainmentFilm: '11',
     EntertainmentMusic: '12',
     EntertainmentMusicals: '13',
-    EntertainmentTV: '14',
+    EntertainmentTelevision: '14',
     EntertainmentVideoGames: '15',
     EntertainmentBoardGames: '16',
     ScienceNature: '17',
@@ -33,12 +33,5 @@ export async function fetchQuestion(enabledCategories, difficulties) {
     let randomDifficulty = difficulties[Math.floor(Math.random() * difficulties.length)];
     const response = await fetch(`https://opentdb.com/api.php?amount=1&category=${randomCategory}&difficulty=${randomDifficulty}&type=multiple`);
     const questionData = await response.json();
-    console.log(questionData);
     return questionData.results[0];
 }
-
-// export async function fetchCategories() { 
-//     const response = await fetch('https://opentdb.com/api_category.php');
-//     const data = await response.json();
-//     return data.trivia_categories;
-// }

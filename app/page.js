@@ -25,7 +25,7 @@ export default function Home() {
   const handleStartFormSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
-    const chosenCategories = formData.getAll('category').map(category => category.replace(/[:\s]/g, '')); // replace colons and spaces
+    const chosenCategories = formData.getAll('category').map(category => category.replace(/[:&\s]/g, '')); // replace colons and spaces
     const difficulties = formData.getAll('difficulty');
 
     if (chosenCategories.length === 0 || difficulties.length === 0) {
@@ -59,8 +59,8 @@ export default function Home() {
 
     setTimeout(async () => {
       setQuestionNumber(questionNumber + 1);
-      const question = await fetchQuestion(selectedCategories, selectedDifficulties)
-      setCurrentQuestion(question) 
+      const question = await fetchQuestion(selectedCategories, selectedDifficulties);
+      setCurrentQuestion(question);
       setCorrectAnswer(question.correct_answer);
       setIncorrectAnswers(question.incorrect_answers);
   
@@ -83,7 +83,8 @@ export default function Home() {
         (
           <div>
             <h1>Question {questionNumber}</h1>
-            <h2>{currentQuestion.category} : {currentQuestion.difficulty}</h2>
+            <h2 dangerouslySetInnerHTML={{ __html: currentQuestion.category}}></h2>
+            <h2>Difficulty : {currentQuestion.difficulty}</h2>
             <hr></hr>
             <p dangerouslySetInnerHTML={{ __html: JSON.stringify(currentQuestion.question)}}></p>
             <div className="answerButtonContainer">
