@@ -38,7 +38,7 @@ export default function Home() {
 
     const question = await fetchQuestion(chosenCategories, difficulties);
     
-    setCurrentQuestion(question) 
+    setCurrentQuestion(question);
     setCorrectAnswer(question.correct_answer);
     setIncorrectAnswers(question.incorrect_answers);
     setIsStarted(true);
@@ -68,7 +68,7 @@ export default function Home() {
         button.disabled = false;
         button.style.backgroundColor = "white";
       });
-    }, 3000);
+    }, 5000);
 
   }
 
