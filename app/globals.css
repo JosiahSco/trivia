@@ -1,6 +1,7 @@
 html {
   background-color: rgb(0, 0, 0);
   color: white;
+  min-height: 100vh;
 }
 
 main {
@@ -8,7 +9,7 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 90vh;
+  height: 95vh;
 }
 
 form {
