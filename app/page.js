@@ -92,7 +92,7 @@ export default function Home() {
             </div>
           </div>
         ) : (
-          <div>
+          <div className="start-container">
             <h1>Trivia Game</h1>
             <form onSubmit={handleStartFormSubmit}>
               <h2>Select Categories:</h2>
