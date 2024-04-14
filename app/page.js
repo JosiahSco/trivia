@@ -98,20 +98,20 @@ export default function Home() {
               <div className="form-categories">
                 {categories.map((category, index) => (
                   <label key={index}>
-                    <input type="checkbox" name="category" value={category.name} /> {category.name}
+                    <input type="checkbox" name="category" value={category.name} defaultChecked/> {category.name}
                   </label>
                 ))}
               </div>
               <div className="form-difficulty">
                 <h2>Select Difficulty:</h2>
                 <label>
-                  <input type="checkbox" name="difficulty" value="easy" /> Easy
+                  <input type="checkbox" name="difficulty" value="easy" defaultChecked/> Easy
                 </label>
                 <label>
-                  <input type="checkbox" name="difficulty" value="medium" /> Medium
+                  <input type="checkbox" name="difficulty" value="medium" defaultChecked/> Medium
                 </label>
                 <label>
-                  <input type="checkbox" name="difficulty" value="hard" /> Hard
+                  <input type="checkbox" name="difficulty" value="hard" defaultChecked/> Hard
                 </label>
               </div>
               <button type="submit">Start</button>
